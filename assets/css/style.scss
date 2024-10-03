@@ -1,0 +1,14 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+html {
+    max-width: 100%; /* Increase this value to make the page wider */
+}
+
+.container {
+    max-width: 100%; /* Increase this value to make the page wider */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Adjust padding if needed */
+}
