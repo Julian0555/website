@@ -1,5 +1,43 @@
+###########################################################
+### Welcome to Beautiful Jekyll!
+### This config file is meant for settings that affect your entire website. When you first
+### set up your website you should go through all these settings and edit them, but after
+### the initial set up you won't need to come back to this file often.
+###########################################################
+
+############################
+# --- Required options --- #
+############################
+
+# Name of website
+title: My website
+
+# Your name to show in the footer
+author: Some Person
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+markdown: kramdown
+highlighter: rouge
+paginate: 5
+
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
 defaults:
-  - full-width: true
-    remote_theme: pages-themes/time-machine@v0.2.0
-    plugins:
-      - jekyll-remote-theme
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "page"
