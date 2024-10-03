@@ -1,3 +1,7 @@
+---
+full-width: true
+---
+
 <wrapper full-width="full-width">
     <head>
         <meta charset="UTF-8">
