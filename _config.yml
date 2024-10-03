@@ -1,3 +1,5 @@
 defaults:
-  -
-    full-width: true
+  - full-width: true
+    remote_theme: pages-themes/time-machine@v0.2.0
+    plugins:
+      - jekyll-remote-theme
