@@ -1,11 +1,16 @@
 ---
+layout: none
 full-width: true
 ---
 
-<body class="container">
+<head> 
+    <link rel="stylesheet" href="style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Table</title>
+</head>
+
+<body class="container">
     <form >
         <br>
         <input type="checkbox" id="noDX80" name="noDX80" value="noDX80" checked=true>
