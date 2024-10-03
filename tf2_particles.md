@@ -29,6 +29,5 @@
 <style>
     .center {
       margin: auto;
-      width: 50%;
     }
   </style>
