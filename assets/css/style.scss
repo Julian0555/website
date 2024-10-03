@@ -3,8 +3,9 @@
 
 @import "{{ site.theme }}";
 
-html {
-    max-width: 100%; /* Increase this value to make the page wider */
+.page-wrapper {
+    max-width: 1500px; /* Increase this value */
+    margin: 0 auto;
 }
 
 .container {
