@@ -27,6 +27,7 @@ export function generateTable() {
 	const nodx80 = document.getElementById("noDX80").checked;
 	const nodx90 = document.getElementById("noDX90").checked;
 	const nodupes = document.getElementById("noDupes").checked;
+	const searchname = document.getElementById("searchname").value.toLowerCase().trim();
 
 	if (document.getElementById("sortName").checked) keys.sort((a, b) => myJson[a].definition.localeCompare(myJson[b].definition));
 	// Create all cells
@@ -35,6 +36,7 @@ export function generateTable() {
 		if (nodx90 && key.toLowerCase().includes("dx90")) return;
 		var entry = myJson[key];
 		if (nodupes && newkeys.includes(entry.definition)) return;
+		if (searchname != "" && !key.toLowerCase().includes(searchname)) return;
 		// Create a table row
 		const row = document.createElement("tr");
 
@@ -55,7 +57,7 @@ export function generateTable() {
 		newkeys.push(entry.definition);
 	})
 
-	console.log(newkeys.length);
+	document.getElementById("totaltext").innerText = "Number of Entries: " + newkeys.length;
 	// Put the <tbody> in the <table>
 	table.appendChild(tableBody);
 
