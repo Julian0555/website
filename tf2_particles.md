@@ -2,7 +2,7 @@
 full-width: true
 ---
 
-<head>
+<body class="container">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Table</title>
@@ -17,21 +17,18 @@ full-width: true
         <input type="checkbox" id="sortName" name="sortName" value="sortName" checked=true>
         <label for="sortName"> Sort by particle name </label><br>
         <br><input type="text" id="searchname" name="searchname"><br><br>
-        <button type="button" id="generateTableButton">Generate Table</button><br><br>
+        <!-- <button type="button" id="generateTableButton">Generate Table</button><br><br> -->
         <meh id="totaltext">Hiii</meh>
     </form>
-</head>
-
-<body>
-	<div id="tableContainer"></div>
-	<script type="module">
+    <div id="tableContainer"></div>
+    <script type="module">
         import { generateTable } from './tf2.js';
         window.generateTable = generateTable;
         generateTable();
-        document.getElementById("generateTableButton").addEventListener("click", function(event) {
+        /*document.getElementById("generateTableButton").addEventListener("click", function(event) {
             event.preventDefault();  // Prevents page reload
             generateTable();         // Calls the function to generate the table
-        });
+        });*/
         document.getElementById("searchname").addEventListener("input", function(event) {
             event.preventDefault();  // Prevents page reload
             generateTable();         // Calls the function to generate the table
@@ -41,5 +38,17 @@ full-width: true
                 event.preventDefault();
             }
         });
+        document.getElementById("noDX80").addEventListener("click", function(event) { generateTable(); });
+        document.getElementById("noDX90").addEventListener("click", function(event) { generateTable(); });
+        document.getElementById("noDupes").addEventListener("click", function(event) { generateTable(); });
+        document.getElementById("sortName").addEventListener("click", function(event) { generateTable(); });
     </script>
 </body>
+
+<style>
+    .container {
+        max-width: 100%; /* Increase this value to make the page wider */
+        margin: 0 auto; /* Centers the container */
+        padding: 0 20px; /* Adjust padding if needed */
+    }
+</style>
