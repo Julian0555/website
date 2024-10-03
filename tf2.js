@@ -24,13 +24,17 @@ export function generateTable() {
 	row.appendChild(cell);
 	tableBody.appendChild(row);
 
+	const nodx80 = document.getElementById("noDX80").checked;
+	const nodx90 = document.getElementById("noDX90").checked;
+	const nodupes = document.getElementById("noDupes").checked;
+
 	if (document.getElementById("sortName").checked) keys.sort((a, b) => myJson[a].definition.localeCompare(myJson[b].definition));
 	// Create all cells
 	keys.forEach(key => {
-		if (document.getElementById("noDX80").checked && key.toLowerCase().includes("dx80")) return;
-		if (document.getElementById("noDX90").checked && key.toLowerCase().includes("dx90")) return;
+		if (nodx80 && key.toLowerCase().includes("dx80")) return;
+		if (nodx90 && key.toLowerCase().includes("dx90")) return;
 		var entry = myJson[key];
-		if (document.getElementById("noDupes").checked && newkeys.includes(entry.definition)) return;
+		if (nodupes && newkeys.includes(entry.definition)) return;
 		// Create a table row
 		const row = document.createElement("tr");
 
@@ -40,8 +44,8 @@ export function generateTable() {
 			// the end of the table row
 			const cell = document.createElement("td");
 			if (j == 0) var cellText = document.createTextNode(entry.definition);
-			if (j == 1) var cellText = document.createTextNode(entry.pcf);
-			if (j == 2) var cellText = document.createTextNode(entry.fullpath);
+			else if (j == 1) var cellText = document.createTextNode(entry.pcf);
+			else var cellText = document.createTextNode(entry.fullpath);
 			cell.appendChild(cellText);
 			row.appendChild(cell);
 		}

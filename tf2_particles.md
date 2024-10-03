@@ -9,6 +9,8 @@ full-width: true
         <title>Create Table</title>
         <form  class="center">
             <br>
+            <input type="checkbox" id="noText" name="noText" value="noText">
+            <label for="noText"> Exclude "_text" entries </label><br>
             <input type="checkbox" id="noDX80" name="noDX80" value="noDX80" checked=true>
             <label for="noDX80"> Exclude dx80 entries </label><br>
             <input type="checkbox" id="noDX90" name="noDX90" value="noDX90">
