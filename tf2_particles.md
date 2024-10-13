@@ -22,7 +22,7 @@ full-width: true
         <label for="sortName"> Sort by particle name </label><br>
         <br><input type="text" id="searchname" name="searchname"><br><br>
         <!-- <button type="button" id="generateTableButton">Generate Table</button><br><br> -->
-        <meh id="totaltext">Hiii</meh>
+        <meh id="totaltext">Hold on...</meh>
     </form>
     <div id="tableContainer"></div>
     <script type="module" async>
