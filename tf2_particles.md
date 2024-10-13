@@ -4,7 +4,6 @@ full-width: true
 ---
 
 <head> 
-    <link rel="stylesheet" href="style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Table</title>
@@ -26,10 +25,11 @@ full-width: true
         <meh id="totaltext">Hiii</meh>
     </form>
     <div id="tableContainer"></div>
-    <script type="module">
-        import { generateTable } from './tf2.js';
+    <script type="module" async>
+        import { fetchJSONData, generateTable } from './tf2.js';
+        window.fetchJSONData = fetchJSONData;
         window.generateTable = generateTable;
-        generateTable();
+        fetchJSONData();
         /*document.getElementById("generateTableButton").addEventListener("click", function(event) {
             event.preventDefault();  // Prevents page reload
             generateTable();         // Calls the function to generate the table

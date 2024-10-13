@@ -1,4 +1,26 @@
-import myJson from './particles.json' with {type: 'json'};
+//import myJson from './particles.json' with {type: 'json'};
+var particles;
+
+export function fetchJSONData() {
+	fetch("./particles.json")
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error
+					(`HTTP error! Status: ${res.status}`);
+			}
+			return res.json();
+		})
+		.then((data) =>
+			setJson(data))
+		.catch((error) =>
+			console.error("Unable to fetch data:", error));
+}
+
+function setJson(data) {
+	particles = data;
+	generateTable();
+	//console.log(myJson);
+}
 
 export function generateTable() {
 	// Create a <table> element and a <tbody> element
@@ -8,7 +30,7 @@ export function generateTable() {
 	const tableBody = document.createElement("tbody");
 
 	// Define the number of rows and columns
-	const keys = Object.keys(myJson);
+	const keys = Object.keys(particles);
 	const newkeys = [];
 	const cols = 3;
 
@@ -29,12 +51,12 @@ export function generateTable() {
 	const nodupes = document.getElementById("noDupes").checked;
 	const searchname = document.getElementById("searchname").value.toLowerCase().trim();
 
-	if (document.getElementById("sortName").checked) keys.sort((a, b) => myJson[a].definition.localeCompare(myJson[b].definition));
+	if (document.getElementById("sortName").checked) keys.sort((a, b) => particles[a].definition.localeCompare(particles[b].definition));
 	// Create all cells
 	keys.forEach(key => {
 		if (nodx80 && key.toLowerCase().includes("dx80")) return;
 		if (nodx90 && key.toLowerCase().includes("dx90")) return;
-		var entry = myJson[key];
+		var entry = particles[key];
 		if (nodupes && newkeys.includes(entry.definition)) return;
 		if (searchname != "" && !key.toLowerCase().includes(searchname)) return;
 		// Create a table row
