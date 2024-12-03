@@ -1,8 +1,3 @@
----
-layout: none
-full-width: true
----
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -64,9 +59,9 @@ full-width: true
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Minesweeper.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Minesweeper.data.br",
-        frameworkUrl: buildUrl + "/Minesweeper.framework.js.br",
-        codeUrl: buildUrl + "/Minesweeper.wasm.br",
+        dataUrl: buildUrl + "/Minesweeper.data.unityweb",
+        frameworkUrl: buildUrl + "/Minesweeper.framework.js.unityweb",
+        codeUrl: buildUrl + "/Minesweeper.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Julian0555",
         productName: "Minesweeper",
