@@ -5,7 +5,7 @@ full-width: true
 
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/apollo.css">
+    <link rel="stylesheet" href="apollo.css">
     <meta charset="utf-8">
     <title>My first three.js app</title>
     <style>
@@ -21,7 +21,7 @@ full-width: true
 		}
 	}
 	</script>
-    <script type="module" src="/apollo.js"></script>
+    <script type="module" src="apollo.js"></script>
   </body>
   <div class="slidecontainer">
     <input type="range" min="0" max="35" value="4.5" class="slider" id="myRange">
