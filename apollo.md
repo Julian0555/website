@@ -24,6 +24,16 @@ full-width: true
     <script type="module" src="apollo.js"></script>
   </body>
   <div class="slidecontainer">
-    <input type="range" min="0" max="35" value="4.5" class="slider" id="myRange">
+    <input type="range" min="0" max="36" value="0" class="slider" id="myRange">
   </div>
+  <input type="checkbox" id="toggle_ortho" name="toggle_ortho">
+  <label for="toggle_ortho"> Orthographic View </label><br>
+  <input type="checkbox" id="toggle_fresnel" name="toggle_fresnel" checked=true>
+  <label for="toggle_fresnel"> Enable Outer Glow </label><br>
+  <input type="checkbox" id="toggle_shading" name="toggle_shading" checked=true>
+  <label for="toggle_shading"> Enable Shading </label><br>
+  <input type="checkbox" id="toggle_diffuse" name="toggle_diffuse" checked=true>
+  <label for="toggle_diffuse"> Enable Diffuse </label><br>
+  <input type="checkbox" id="show_normals" name="show_normals">
+  <label for="show_normals"> Show Normals </label><br>
 </html>
